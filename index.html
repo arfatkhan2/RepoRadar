@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repositories</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img id="profileImage" alt="Profile Image">
+        <h1>RepoRadar</h1>
+        <input style="text-align: center;" type="text" placeholder="Search for a user..." id="searchUser">
+        <div class="user-info">
+            <h2>User Details</h2>
+            <p>Bio: <span id="bio">Not available</span></p>
+            <p>Location: <span id="location">Not available</span></p>
+            <p>Repositories: <span id="publicRepos">0</span></p>
+            <p>Followers: <span id="followers">0</span></p>
+        </div>
+    </header>
+
+    <main>
+        <section class="repositories" id="repositoryList">
+            <div class="loader" id="loaderRepos"></div>
+        </section>
+
+        <section class="pagination">
+            <button onclick="changePage(-1)">Previous</button>
+            <span id="currentPage">1</span>
+            <button onclick="changePage(1)">Next</button>
+        </section>
+    </main>
+
+    <aside>
+        <section class="user-links">
+            <h2>User Links</h2>
+            <p><a href="https://twitter.com/" target="_blank">Twitter</a></p>
+            <p><a href="https://www.example.com/" target="_blank">Website</a></p>
+        </section>
+
+        <label for="repositoriesPerPage">Repositories per Page:</label>
+        <select id="repositoriesPerPage" onchange="updateRepositoriesPerPage()">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
